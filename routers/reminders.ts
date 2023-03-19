@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const { title } = req.body as CreateReminderDto;
-  res.json(title);
+  const reminder = { id: Date.now(), title, isComplete: false };
+  res.json(reminder);
 });
 
 export default router;
